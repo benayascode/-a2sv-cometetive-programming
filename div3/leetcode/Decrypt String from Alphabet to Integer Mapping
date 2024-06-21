@@ -1,0 +1,16 @@
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        letter="abcdefghijklmnopqrstuvwxyz"
+        n=["1","2","3","4","5","6","7","8","9","10#","11#","12#","13#","14#","15#","16#","17#","18#","19#","20#","21#","22#","23#","24#","25#","26#"]
+        i=0
+        out=""
+        while i<len(s):
+            if  i<len(s)-2 and s[i+2]=="#":
+                j=n.index(s[i:i+3])
+                out+=letter[j]
+                i+=3
+            else:
+                j=n.index(s[i])
+                out+=letter[j]
+                i+=1
+        return out
