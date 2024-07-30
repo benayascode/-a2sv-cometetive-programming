@@ -1,0 +1,11 @@
+class Solution:
+    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
+        out=[]
+        j,i=0,0
+        while j<len(names):
+            x=max(heights)
+            i=heights.index(x)
+            out.append(names[i])
+            heights[i]=0
+            j+=1
+        return out
